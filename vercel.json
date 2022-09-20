@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "victoriatrac-portfolio-be",
+  "name": "portfolio-2022-be",
   "builds": [
     { "src": "script.js", "use": "@vercel/node" }
   ],
