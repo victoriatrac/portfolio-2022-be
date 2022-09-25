@@ -21,7 +21,6 @@ server.get('/', (req, res) => {
     message: `Server is running at ${currentTime}`,
     author: `Github: @victoriatrac`
   })
-  // .send(`<h1>Server is working</h1>`)
 })
 
 module.exports = server
