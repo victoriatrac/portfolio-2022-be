@@ -1,3 +1,15 @@
+const server = require('./api/server')
+const port = (process.env.PORT || 1234)
+
+server.listen(port, ()=>{
+  console.log(`\n*** server listening on port ${port}***\n`
+      .rainbow)
+})
+
+
+// old
+/*
+
 // Express
 const express = require('express')
 const app = express()
@@ -36,3 +48,5 @@ app.get('/link', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`)
 })
+
+*/
