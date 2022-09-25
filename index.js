@@ -7,15 +7,17 @@ const knexConfig = require('./db/knexfile')
 const knex = require('knex')({
   ...knexConfig, 
   client: 'sqlite3', 
-  useNullAsDefault: true})
+  useNullAsDefault: true,
+  connection: {filename: './db/data/db.sqlite3'}})
 
-  // Router setup
-const router = require('./api/router')
+// Router setup
+// const router = require('./api/router')
 app.use(express.json({ extended: false }))
-app.use('/api', router)
 
+// Port variable declaration
 const PORT = process.env.PORT || 1234
 
+// Application methods
 app.get('/link', (req, res) => {
   knex('links')
     .select()
@@ -30,26 +32,6 @@ app.get('/link', (req, res) => {
       })
     })
 })
-
-// app.get('/link', (req, res) => {
-//   knex('links')
-//     .select()
-//     // .select({
-//     //   id: 'id',
-//     //   title: 'title'
-//     // })
-//     .then((links) => {
-//       console.log(links)
-//       return res.json(links)
-//     })
-//     .catch((err) => {
-//       console.log(err)
-//       return res.json({
-//         success: false,
-//         message: 'An error occurred'
-//       })
-//     })
-// })
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`)

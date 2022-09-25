@@ -1,8 +1,11 @@
-const express = require('express')
+// const express = require('express')
 const Links = require('./model')
 const router = express.Router()
 
-// router.use(express.json())
+// const db = require('../db/db-config.js')
+
+router.use(express.json())
+app.use('/api', router)
 
 router.get('/', async (req, res) => {
   try {
@@ -18,14 +21,19 @@ router.get('/', async (req, res) => {
 
 router.get('/links', (req, res) => {
   Links.getAllLinks()
-    .then((links) => {
-      res.status(200).json({
-        message: `links fetched`,
+    .then(links => {
+      res.json({
+        status: 200,
+        message: 'links fetched',
         links
       })
     })
-    .catch((err) => {
-      err.message = `Failed to get users`
+    .catch(err => {
+      res.json({
+        status: 500,
+        message: `Failed to get links`,
+        err
+      })
     })
 })
 

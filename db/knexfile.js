@@ -4,13 +4,13 @@
 	    client: 'sqlite3',
       useNullAsDefault: true,
 	    connection: {
-	      filename: './db.sqlite3'
+	      filename: './data/db.sqlite3'
       },
       migrations: {
-	      directory: './migrations'
+	      directory: './data/migrations'
       },
       seeds: {
-        directory: './seeds'
+        directory: './data/seeds'
       },
   }
   /* note */

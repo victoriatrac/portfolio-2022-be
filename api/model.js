@@ -1,7 +1,7 @@
 const db = require('../db/db-config.js')
 
 function getAllLinks() {
-  return db('links')
+  return db("links")
 }
 
 module.exports = {
