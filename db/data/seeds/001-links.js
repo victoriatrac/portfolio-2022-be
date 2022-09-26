@@ -3,14 +3,14 @@ exports.seed = function(knex) {
   const links = [
     {
       link_id: 0, 
-      title: 'rowValue1',
-      description: 'link1',
+      title: 'Portfolio',
+      description: 'Portfolio',
       url: 'https://www.linkedin.com/in/victoriatrac/'
     },
     {
       link_id: 1, 
-      title: 'rowValue2',
-      description: 'link2',
+      title: 'LinkedIn',
+      description: 'LinkedIn',
       url: 'https://www.linkedin.com/in/victoriatrac/'
     },
     {
@@ -21,8 +21,7 @@ exports.seed = function(knex) {
     }
   ]
   
-  return knex('links').truncate()
-    .then(function () {
-      return knex('links').insert(links)
-    })
-};
+  return knex('links')
+    .insert(links)
+    
+}
